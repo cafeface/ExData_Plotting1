@@ -9,7 +9,7 @@ source("getData.R")
 two_days <- getData()
 
 
-png("figure//plot4.png", width = 480, height = 480)
+png("plot4.png", width = 480, height = 480)
 par(mfrow = c(2,2))
 
 plot(two_days$Time, 

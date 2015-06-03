@@ -9,7 +9,7 @@ source("getData.R")
 two_days <- getData()
 
 
-png("figure//plot3.png", width = 480, height = 480)
+png("plot3.png", width = 480, height = 480)
 plot(two_days$Time, 
      as.numeric(as.character(two_days$Sub_metering_1)), 
      type = "l", xlab = "", ylab = "Energy sub metering")

@@ -9,7 +9,7 @@ source("getData.R")
 two_days <- getData()
 
 
-png("figure//plot2.png", width = 480, height = 480)
+png("plot2.png", width = 480, height = 480)
 plot(two_days$Time, 
      as.numeric(as.character(two_days$Global_active_power)), 
      type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")

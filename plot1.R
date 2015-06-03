@@ -9,7 +9,7 @@ source("getData.R")
 two_days <- getData()
 
 
-png("figure//plot1.png", width = 480, height = 480)
+png("plot1.png", width = 480, height = 480)
 hist(as.numeric(as.character(two_days$Global_active_power)), 
      xlab = "Global Active Power (kilowatts)", 
      main = "Global Active Power", col = "red")
