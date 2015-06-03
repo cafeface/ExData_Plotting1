@@ -14,7 +14,7 @@ par(mfrow = c(2,2))
 
 plot(two_days$Time, 
      as.numeric(as.character(two_days$Global_active_power)), 
-     type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
+     type = "l", xlab = "", ylab = "Global Active Power")
 
 plot(two_days$Time, 
      as.numeric(as.character(two_days$Voltage)), 
@@ -26,7 +26,7 @@ plot(two_days$Time,
 lines(two_days$Time, as.numeric(as.character(two_days$Sub_metering_2)), col = "red")
 lines(two_days$Time, as.numeric(as.character(two_days$Sub_metering_3)), col = "blue")
 legend("topright", lwd = 1, col = c("black", "red", "blue"), 
-       border = "white", legend = names(two_days)[7:9])
+       bty = "n", legend = names(two_days)[7:9])
 
 plot(two_days$Time, 
      as.numeric(as.character(two_days$Global_reactive_power)), 

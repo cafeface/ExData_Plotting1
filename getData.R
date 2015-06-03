@@ -20,6 +20,7 @@ get_from_txt <- function() {
     hpc$Date <- factor(hpc$Date)
     Date_Time <- strptime(paste(hpc$Date, hpc$Time), format = "%m/%d/%Y %H:%M:%S")
     hpc$Time <- Date_Time
+    hpc
 }
 
 get_from_zip <- function() {
