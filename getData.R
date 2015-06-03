@@ -15,20 +15,23 @@ getData <- function() {
 }
 
 get_from_txt <- function() {
+    print(paste("Reading", txt_fname, "..."))
     hpc <- read.csv2(txt_fname)
-    hpc <- subset(hpc, Date == "2/1/2007" | Date == "2/2/2007")
+    hpc <- subset(hpc, Date == "1/2/2007" | Date == "2/2/2007")
     hpc$Date <- factor(hpc$Date)
-    Date_Time <- strptime(paste(hpc$Date, hpc$Time), format = "%m/%d/%Y %H:%M:%S")
+    Date_Time <- strptime(paste(hpc$Date, hpc$Time), format = "%d/%m/%Y %H:%M:%S")
     hpc$Time <- Date_Time
     hpc
 }
 
 get_from_zip <- function() {
+    print(paste("Unzipping", zip_fname, "..."))
     unzip(zip_fname)
     get_from_txt()
 }
 
 get_from_url <- function() {
+    print(paste("Please be patient while I download data from", url))
     download.file(url, zip_fname, method = "curl", quiet = TRUE)
     get_from_zip()
 }
